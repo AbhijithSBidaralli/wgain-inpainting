@@ -10,6 +10,8 @@ import tensorflow as tf
 from tensorflow import data
 from tensorflow import keras
 
+import sys
+sys.path.insert(1, './WGAIN_model')
 from WGAIN_model import *
 
 print(tf.__version__)

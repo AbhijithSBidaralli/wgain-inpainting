@@ -12,6 +12,8 @@ if __name__ == "__main__":
 
     print("************ Running Command *********************")
     start = time.time()
-    outputMode = subprocess.call(['python','WGAIN_CELEBA.py','2>&1', '|', 'tee', 'train_CELEBA.log'])
+    outputMode = subprocess.call(['python','inpainting/WGAIN_CELEBA.py','2>&1', '|', 'tee', 'train_CELEBA.log'])
+    if outputMode != 0:
+        raise Exception("Command failed to train!")
     timeTakenMin = (time.time()-start)/60
-    print("Successfully Done CONVERTING AUDIO in "+str(timeTakenMin)+"min")
+    print("Successfully Done training "+str(timeTakenMin)+"min")

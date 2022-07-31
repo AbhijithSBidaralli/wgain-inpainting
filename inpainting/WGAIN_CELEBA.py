@@ -11,7 +11,7 @@ from tensorflow import data
 from tensorflow import keras
 
 import sys
-sys.path.insert(1, './WGAIN_model')
+sys.path.insert(1, './inpainting')
 from WGAIN_model import *
 
 print(tf.__version__)

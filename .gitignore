@@ -1,3 +1,2 @@
-__pycache__
-.ipynb_checkpoints
-saved_models_*
+*.exe
+*.zip

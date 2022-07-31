@@ -1,0 +1,17 @@
+universe 		        = docker
+docker_image 		    = ahmedmismail/ser-mme:v4
+executable              = MMEmotionRecognition.exe
+output                  = condor/ser.$(ClusterId).$(ProcId).out
+error                   = condor/ser.$(ClusterId).$(ProcId).err
+log                     = condor/ser.$(ClusterId).log
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+transfer_output_files = MMEmotionRecognition/src/Audio/out
+transfer_input_files = MMEmotionRecognition
+request_GPUs = 1
+request_CPUs = 1
+request_memory = 50G
+request_disk = 20G
+requirements = UidDomain == "cs.uni-saarland.de" 
++WantGPUHomeMounted = true
+queue 1
